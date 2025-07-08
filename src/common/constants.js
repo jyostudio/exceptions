@@ -1,0 +1,1 @@
+export const CONSTURCTOR_SYMBOL = Symbol("constructor");
