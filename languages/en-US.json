@@ -1,0 +1,12 @@
+{
+    "Exception_WasThrown": "Exception of type '{0}' was thrown.",
+    "Arg_SystemException": "System error.",
+    "Arg_AccessViolationException": "Attempted to read or write protected memory. This is often an indication that other memory is corrupt.",
+    "AggregateException_ctor_DefaultMessage": "One or more errors occurred.",
+    "Exception_EndOfInnerExceptionStack": "--- End of inner exception stack trace ---",
+    "AggregateException_ToString": "{0}{1}---> (Inner Exception #{2}) {3}{4}{5}",
+    "AggregateException_ctor_InnerExceptionNull": "An element of causes is null.",
+    "Arg_ArgumentException": "Value is not within the expected range.",
+    "Arg_ParamName_Name": "Parameter name: {0}",
+    "ArgumentNull_Generic": "Value cannot be null."
+}

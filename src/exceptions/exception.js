@@ -1,22 +1,22 @@
 import overload from "@jyostudio/overload";
-import { CONSTURCTOR_SYMBOL } from "../common/constants.js";
-import { getMessage } from "../messages/message.js";
+import { CONSTRUCTOR_SYMBOL } from "../common/constants.js";
+import { getMessage } from "../common/message.js";
 
 export default class Exception extends Error {
-    static [CONSTURCTOR_SYMBOL] = function (...params) {
-        Exception[CONSTURCTOR_SYMBOL] = overload()
+    static [CONSTRUCTOR_SYMBOL] = function (...params) {
+        Exception[CONSTRUCTOR_SYMBOL] = overload()
             .add([], function () {
                 this.message = getMessage("Exception_WasThrown", this.name);
             })
             .add([String], function (msg) {
                 this.message = msg;
             })
-            .add([String, [Error, Exception]], function (msg, innerException) {
+            .add([String, [Error, Exception, null]], function (msg, innerException) {
                 this.message = msg;
                 this.cause = innerException;
             });
 
-        return Exception[CONSTURCTOR_SYMBOL].apply(this, params);
+        return Exception[CONSTRUCTOR_SYMBOL].apply(this, params);
     }
 
     constructor(...params) {
@@ -24,7 +24,7 @@ export default class Exception extends Error {
 
         this.name = this.constructor.name;
 
-        Exception[CONSTURCTOR_SYMBOL].apply(this, params);
+        Exception[CONSTRUCTOR_SYMBOL].apply(this, params);
     }
 
     toJSON() {
@@ -38,5 +38,26 @@ export default class Exception extends Error {
             }
         });
         return obj;
+    }
+
+    toString(...params) {
+        Exception.prototype.toString = overload([], function () {
+            const message = this.message;
+            let s;
+
+            if (message === null || message.length <= 0) {
+                s = this.constructor.name;
+            } else {
+                s = `${this.constructor.name}: ${message}`;
+            }
+
+            if (this.cause) {
+                s = `${s} ---> ${this.cause.toString()}\r\n   ${getMessage("Exception_EndOfInnerExceptionStack")}`;
+            }
+
+            return s;
+        });
+
+        return Exception.prototype.toString.apply(this, params);
     }
 }

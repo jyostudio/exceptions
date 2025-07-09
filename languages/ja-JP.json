@@ -1,0 +1,12 @@
+{
+    "Exception_WasThrown": "型 '{0}' の例外がスローされました。",
+    "Arg_SystemException": "システムエラーです。",
+    "Arg_AccessViolationException": "保護されているメモリに対する読み取りまたは書き込みが試行されました。他のメモリが破損していることがよくあります。",
+    "AggregateException_ctor_DefaultMessage": "1つ以上のエラーが発生しました。",
+    "Exception_EndOfInnerExceptionStack": "--- 内部例外スタック トレースの終わり ---",
+    "AggregateException_ToString": "{0}{1}---> (内部例外 #{2}) {3}{4}{5}",
+    "AggregateException_ctor_InnerExceptionNull": "causes の要素の1つが null です。",
+    "Arg_ArgumentException": "値が予期される範囲内にありません。",
+    "Arg_ParamName_Name": "パラメーター名: {0}",
+    "ArgumentNull_Generic": "値を null にすることはできません。"
+}

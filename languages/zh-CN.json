@@ -1,0 +1,12 @@
+{
+    "Exception_WasThrown": "引发类型为“{0}”的异常。",
+    "Arg_SystemException": "系统错误。",
+    "Arg_AccessViolationException": "尝试读取或写入受保护的内存。 这通常表明其他内存已损坏。",
+    "AggregateException_ctor_DefaultMessage": "发生了一个或多个错误。",
+    "Exception_EndOfInnerExceptionStack": "--- 内部异常堆栈跟踪的结尾 ---",
+    "AggregateException_ToString": "{0}{1}---> (内部异常 #{2}) {3}{4}{5}",
+    "AggregateException_ctor_InnerExceptionNull": "causes 的某个元素为 null。",
+    "Arg_ArgumentException": "值不在预期范围内。",
+    "Arg_ParamName_Name": "参数名: {0}",
+    "ArgumentNull_Generic": "值不能为 null。"
+}

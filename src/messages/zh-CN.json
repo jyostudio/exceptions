@@ -1,5 +1,0 @@
-{
-    "Exception_WasThrown": "引发了类型为\"{0}\"的异常。",
-    "Arg_SystemException": "系统错误。",
-    "Arg_AccessViolationException": "尝试读取或写入受保护的内存。 这通常表明其他内存已损坏。"
-}

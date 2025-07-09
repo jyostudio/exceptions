@@ -47,7 +47,7 @@ var h = function h(r, e) {
 };
 var b = "*",
   T = "...",
-  J = "\u21C4",
+  V = "\u21C4",
   L = "##INNER_TYPE##",
   I = "@@INNER_TYPE@@",
   B = "##INNER_THROW_FN##",
@@ -105,26 +105,26 @@ function Q(r, e, t) {
     i = "";
   n.forEach(function (s, a, y) {
     var d = s.trim().split(" "),
-      A = d.length === 3 ? d[1] : "(\u533F\u540D)",
-      w = A.split(".").pop();
+      N = d.length === 3 ? d[1] : "(\u533F\u540D)",
+      w = N.split(".").pop();
     y[a] = {
-      fullMethodName: A,
+      fullMethodName: N,
       methodName: w,
       link: d.length === 3 ? d[2] : d[1]
     }, a ? c += "".concat(w, "\t").concat(y[a].link, "\n") : i = w;
   });
-  var m = e.find(function (s) {
+  var E = e.find(function (s) {
     return s.length === t.length;
   });
-  if (!m) throw o += "\u65B9\u6CD5 ".concat(i, " \u4E0D\u5B58\u5728 ").concat(t.length, " \u4E2A\u53C2\u6570\u7684\u91CD\u8F7D\u3002"), o += c, new Error(o);
+  if (!E) throw o += "\u65B9\u6CD5 ".concat(i, " \u4E0D\u5B58\u5728 ").concat(t.length, " \u4E2A\u53C2\u6570\u7684\u91CD\u8F7D\u3002"), o += c, new Error(o);
   var u = !1;
-  if (m.forEach(function (s, a) {
+  if (E.forEach(function (s, a) {
     if (!D(t[a], s)) {
       var _s$B;
       var y = Array.isArray(s) ? s.map(v).join("\u3001") : v(s);
-      o += "".concat(u ? "\n" : "", "\u53C2\u6570").concat(a + 1, "\uFF1A\u9884\u671F ").concat(y, " \u4F46\u5F97\u5230 ").concat(v(t[a]), "\u3002"), Array.isArray(s) ? s.forEach(function (d, A) {
+      o += "".concat(u ? "\n" : "", "\u53C2\u6570").concat(a + 1, "\uFF1A\u9884\u671F ").concat(y, " \u4F46\u5F97\u5230 ").concat(v(t[a]), "\u3002"), Array.isArray(s) ? s.forEach(function (d, N) {
         var _d$B;
-        typeof (d === null || d === void 0 ? void 0 : d[B]) == "function" && (o += "".concat(A === 0 ? "\n\u9644\u52A0\u4FE1\u606F\uFF1A\n" : "", "\u5C1D\u8BD5\u65B9\u6848").concat(a + 1, " - ").concat((_d$B = d[B]) === null || _d$B === void 0 ? void 0 : _d$B.call(d, t[a])));
+        typeof (d === null || d === void 0 ? void 0 : d[B]) == "function" && (o += "".concat(N === 0 ? "\n\u9644\u52A0\u4FE1\u606F\uFF1A\n" : "", "\u5C1D\u8BD5\u65B9\u6848").concat(a + 1, " - ").concat((_d$B = d[B]) === null || _d$B === void 0 ? void 0 : _d$B.call(d, t[a])));
       }) : typeof (s === null || s === void 0 ? void 0 : s[B]) == "function" && (o += "\n\u9644\u52A0\u4FE1\u606F\uFF1A\n\u5C1D\u8BD5\u65B9\u6848".concat(a + 1, " - ").concat((_s$B = s[B]) === null || _s$B === void 0 ? void 0 : _s$B.call(s, t[a]))), u = !0;
     }
   }), u) throw o = "\u65B9\u6CD5 ".concat(i, " \u8C03\u7528\u9519\u8BEF\n").concat(o), o += c, new Error(o);
@@ -148,19 +148,19 @@ function U() {
       i[_key2] = arguments[_key2];
     }
     if (!r.length) return o.apply(this, i);
-    var m = i.length;
+    var E = i.length;
     t: for (var u = 0; u < r.length; u++) {
       var s = r[u],
         a = t[u],
         y = s.length;
-      if (!(a.length !== m && !a.rest || m === 0 && y && s[0] !== T)) {
-        for (var d = 0; d < m; d++) {
-          var A = s[d] || s[y - 1];
-          if (!D(i[d], A)) {
+      if (!(a.length !== E && !a.rest || E === 0 && y && s[0] !== T)) {
+        for (var d = 0; d < E; d++) {
+          var N = s[d] || s[y - 1];
+          if (!D(i[d], N)) {
             try {
-              var _A$J;
-              var w = A === null || A === void 0 || (_A$J = A[J]) === null || _A$J === void 0 ? void 0 : _A$J.call(A, i[d]);
-              if (D(w, A)) {
+              var _N$V;
+              var w = N === null || N === void 0 || (_N$V = N[V]) === null || _N$V === void 0 ? void 0 : _N$V.call(N, i[d]);
+              if (D(w, N)) {
                 i[d] = w;
                 continue;
               }
@@ -173,9 +173,9 @@ function U() {
     }
     return o.apply(this, i);
   }
-  return h(c, "overload"), c.add = function (i, m) {
+  return h(c, "overload"), c.add = function (i, E) {
     if (!Array.isArray(r)) throw new TypeError("types \u5FC5\u987B\u662F\u6570\u7EC4\u3002");
-    if (typeof m != "function") throw new TypeError("fn \u5FC5\u987B\u662F\u51FD\u6570\u3002");
+    if (typeof E != "function") throw new TypeError("fn \u5FC5\u987B\u662F\u51FD\u6570\u3002");
     for (var u = 0; u < i.length; u++) if (i[u] === T && u !== i.length - 1) throw new SyntaxError("".concat(T, " \u5FC5\u987B\u662F\u6700\u540E\u4E00\u4E2A\u53C2\u6570\u3002"));
     return r.forEach(function (u) {
       if (u.length === i.length) {
@@ -190,7 +190,7 @@ function U() {
         var y = _typeof(u[a]);
         if (y !== "function" && !(y === "object" && typeof ((_u$a = u[a]) === null || _u$a === void 0 ? void 0 : _u$a.constructor) == "function") && u[a] !== null && u[a] !== b) throw new TypeError("\u7C7B\u578B\u5FC5\u987B\u4E3A Class\u3001null \u6216 ".concat(b, "\u3002"));
       }
-    }), r.push(i), e.push(m), t.push({
+    }), r.push(i), e.push(E), t.push({
       length: i.length,
       rest: i[i.length - 1] === T
     }), c;
@@ -201,14 +201,14 @@ function U() {
   }, c;
 }
 h(U, "createOverload");
-var E = U().add([], function () {
+var m = U().add([], function () {
   return U();
 }).add([Array, Function], function (r, e) {
   var t = U();
   return t.add(r, e), t;
 });
 var l = Symbol("constructor");
-var M = E([String, "..."], function (r) {
+var M = m([String, "..."], function (r) {
     for (var _len3 = arguments.length, e = new Array(_len3 > 1 ? _len3 - 1 : 0), _key3 = 1; _key3 < _len3; _key3++) {
       e[_key3 - 1] = arguments[_key3];
     }
@@ -217,26 +217,26 @@ var M = E([String, "..."], function (r) {
       return _typeof(o) > "u" ? t : o;
     });
   }),
-  V = E([Object, Function], function (r, e) {
+  W = m([Object, Function], function (r, e) {
     return r instanceof e ? r : null;
   });
 var G = {
-  Exception_WasThrown: "Exception of type '{0}' was thrown.",
-  Arg_SystemException: "System error.",
-  Arg_AccessViolationException: "Attempted to read or write protected memory. This is often an indication that other memory is corrupt.",
-  AggregateException_ctor_DefaultMessage: "One or more errors occurred.",
-  Exception_EndOfInnerExceptionStack: "--- End of inner exception stack trace ---",
-  AggregateException_ToString: "{0}{1}---> (Inner Exception #{2}) {3}{4}{5}",
-  AggregateException_ctor_InnerExceptionNull: "An element of causes is null.",
-  Arg_ArgumentException: "Value is not within the expected range.",
-  Arg_ParamName_Name: "Parameter name: {0}",
-  ArgumentNull_Generic: "Value cannot be null."
+  Exception_WasThrown: "\u578B '{0}' \u306E\u4F8B\u5916\u304C\u30B9\u30ED\u30FC\u3055\u308C\u307E\u3057\u305F\u3002",
+  Arg_SystemException: "\u30B7\u30B9\u30C6\u30E0\u30A8\u30E9\u30FC\u3067\u3059\u3002",
+  Arg_AccessViolationException: "\u4FDD\u8B77\u3055\u308C\u3066\u3044\u308B\u30E1\u30E2\u30EA\u306B\u5BFE\u3059\u308B\u8AAD\u307F\u53D6\u308A\u307E\u305F\u306F\u66F8\u304D\u8FBC\u307F\u304C\u8A66\u884C\u3055\u308C\u307E\u3057\u305F\u3002\u4ED6\u306E\u30E1\u30E2\u30EA\u304C\u7834\u640D\u3057\u3066\u3044\u308B\u3053\u3068\u304C\u3088\u304F\u3042\u308A\u307E\u3059\u3002",
+  AggregateException_ctor_DefaultMessage: "1\u3064\u4EE5\u4E0A\u306E\u30A8\u30E9\u30FC\u304C\u767A\u751F\u3057\u307E\u3057\u305F\u3002",
+  Exception_EndOfInnerExceptionStack: "--- \u5185\u90E8\u4F8B\u5916\u30B9\u30BF\u30C3\u30AF \u30C8\u30EC\u30FC\u30B9\u306E\u7D42\u308F\u308A ---",
+  AggregateException_ToString: "{0}{1}---> (\u5185\u90E8\u4F8B\u5916 #{2}) {3}{4}{5}",
+  AggregateException_ctor_InnerExceptionNull: "causes \u306E\u8981\u7D20\u306E1\u3064\u304C null \u3067\u3059\u3002",
+  Arg_ArgumentException: "\u5024\u304C\u4E88\u671F\u3055\u308C\u308B\u7BC4\u56F2\u5185\u306B\u3042\u308A\u307E\u305B\u3093\u3002",
+  Arg_ParamName_Name: "\u30D1\u30E9\u30E1\u30FC\u30BF\u30FC\u540D: {0}",
+  ArgumentNull_Generic: "\u5024\u3092 null \u306B\u3059\u308B\u3053\u3068\u306F\u3067\u304D\u307E\u305B\u3093\u3002"
 };
 (typeof process === "undefined" ? "undefined" : _typeof(process)) > "u" && (globalThis.process = {}, (_globalThis$process$e = (_globalThis$process = globalThis.process).env) !== null && _globalThis$process$e !== void 0 ? _globalThis$process$e : _globalThis$process.env = {}, (_globalThis$process$e3 = (_globalThis$process$e2 = globalThis.process.env).lang) !== null && _globalThis$process$e3 !== void 0 ? _globalThis$process$e3 : _globalThis$process$e2.lang = "zh-CN");
 var O = {};
 O = G;
 O = new Map(Object.entries(O));
-var S = E([String, "..."], function (r) {
+var S = m([String, "..."], function (r) {
     var _O$get;
     var t = (_O$get = O.get(r)) !== null && _O$get !== void 0 ? _O$get : r;
     for (var _len4 = arguments.length, e = new Array(_len4 > 1 ? _len4 - 1 : 0), _key4 = 1; _key4 < _len4; _key4++) {
@@ -244,10 +244,10 @@ var S = E([String, "..."], function (r) {
     }
     return M.apply(void 0, [t].concat(e));
   }),
-  ft = E([String, String], function (r, e) {
+  ft = m([String, String], function (r, e) {
     O.set(r, e);
   }),
-  ht = E([Object], function (r) {
+  ht = m([Object], function (r) {
     Object.entries(r).forEach(function (_ref) {
       var _ref2 = _slicedToArray(_ref, 2),
         e = _ref2[0],
@@ -282,7 +282,7 @@ var g = (_r2 = /*#__PURE__*/function (_Error) {
       for (var _len6 = arguments.length, e = new Array(_len6), _key6 = 0; _key6 < _len6; _key6++) {
         e[_key6] = arguments[_key6];
       }
-      return r.prototype.toString = E([], function () {
+      return r.prototype.toString = m([], function () {
         var t = this.message,
           n;
         return t === null || t.length <= 0 ? n = this.constructor.name : n = "".concat(this.constructor.name, ": ").concat(t), this.cause && (n = "".concat(n, " ---> ").concat(this.cause.toString(), "\r\n   ").concat(S("Exception_EndOfInnerExceptionStack"))), n;
@@ -293,7 +293,7 @@ var g = (_r2 = /*#__PURE__*/function (_Error) {
   for (var _len7 = arguments.length, e = new Array(_len7), _key7 = 0; _key7 < _len7; _key7++) {
     e[_key7] = arguments[_key7];
   }
-  return _r2[l] = E().add([], function () {
+  return _r2[l] = m().add([], function () {
     this.message = S("Exception_WasThrown", this.name);
   }).add([String], function (t) {
     this.message = t;
@@ -301,7 +301,7 @@ var g = (_r2 = /*#__PURE__*/function (_Error) {
     this.message = t, this.cause = n;
   }), _r2[l].apply(this, e);
 }), _r2);
-var N = (_r3 = /*#__PURE__*/function (_g) {
+var A = (_r3 = /*#__PURE__*/function (_g) {
   function r() {
     var _this3;
     _classCallCheck(this, r);
@@ -317,7 +317,7 @@ var N = (_r3 = /*#__PURE__*/function (_g) {
   for (var _len9 = arguments.length, e = new Array(_len9), _key9 = 0; _key9 < _len9; _key9++) {
     e[_key9] = arguments[_key9];
   }
-  return _r3[l] = E().add([], function () {
+  return _r3[l] = m().add([], function () {
     this.message = S("Arg_SystemException");
   }).add([String], function (t) {
     g[l].call(this, t);
@@ -325,7 +325,7 @@ var N = (_r3 = /*#__PURE__*/function (_g) {
     g[l].call(this, t, n);
   }), _r3[l].apply(this, e);
 }), _r3);
-var k = (_r4 = /*#__PURE__*/function (_N) {
+var k = (_r4 = /*#__PURE__*/function (_A) {
   function r() {
     var _this4;
     _classCallCheck(this, r);
@@ -335,24 +335,24 @@ var k = (_r4 = /*#__PURE__*/function (_N) {
     _this4 = _callSuper(this, r), r[l].apply(_assertThisInitialized(_this4), e);
     return _this4;
   }
-  _inherits(r, _N);
+  _inherits(r, _A);
   return _createClass(r);
-}(N), h(_r4, "AccessViolationException"), _defineProperty(_r4, l, function () {
+}(A), h(_r4, "AccessViolationException"), _defineProperty(_r4, l, function () {
   for (var _len1 = arguments.length, e = new Array(_len1), _key1 = 0; _key1 < _len1; _key1++) {
     e[_key1] = arguments[_key1];
   }
-  return _r4[l] = E().add([], function () {
+  return _r4[l] = m().add([], function () {
     this.message = S("Arg_AccessViolationException");
   }).add([String], function (t) {
-    N[l].call(this, t);
+    A[l].call(this, t);
   }).add([String, [Error, g, null]], function (t, n) {
-    N[l].call(this, t, n);
+    A[l].call(this, t, n);
   }), _r4[l].apply(this, e);
 }), _r4);
 var C = "*",
   R = "...",
   q = "##INNER_TYPE##",
-  H = "@@INNER_TYPE@@";
+  J = "@@INNER_TYPE@@";
 function Y(r, e) {
   var _r5;
   if (Array.isArray(e)) {
@@ -383,7 +383,7 @@ function Y(r, e) {
       r = Object(r);
       break;
   }
-  return r === e || r instanceof e ? !0 : (_r5 = r) !== null && _r5 !== void 0 && _r5[H] ? r[H] === (e === null || e === void 0 ? void 0 : e[q]) : !1;
+  return r === e || r instanceof e ? !0 : (_r5 = r) !== null && _r5 !== void 0 && _r5[J] ? r[J] === (e === null || e === void 0 ? void 0 : e[q]) : !1;
 }
 h(Y, "b");
 function P(r) {
@@ -393,7 +393,7 @@ function P(r) {
   var e = _typeof(r);
   if (!["function", "object"].includes(e)) return e[0].toUpperCase() + e.slice(1);
   var t = ((r === null || r === void 0 ? void 0 : r.name) || (r === null || r === void 0 || (_r$constructor2 = r.constructor) === null || _r$constructor2 === void 0 ? void 0 : _r$constructor2.name) || "(\u672A\u77E5)").split(" ").pop();
-  return [q, H].forEach(function (n) {
+  return [q, J].forEach(function (n) {
     (r === null || r === void 0 ? void 0 : r[n]) && (t += "<".concat(P(r === null || r === void 0 ? void 0 : r[n]), ">"));
   }), e === "function" && t === "anonymous" ? "(\u533F\u540D)" : t;
 }
@@ -405,20 +405,20 @@ function Z(r, e, t) {
     i = "";
   n.forEach(function (s, a, y) {
     var d = s.trim().split(" "),
-      A = d.length === 3 ? d[1] : "(\u533F\u540D)",
-      w = A.split(".").pop();
+      N = d.length === 3 ? d[1] : "(\u533F\u540D)",
+      w = N.split(".").pop();
     y[a] = {
-      fullMethodName: A,
+      fullMethodName: N,
       methodName: w,
       link: d.length === 3 ? d[2] : d[1]
     }, a ? c += "".concat(w, "\t").concat(y[a].link, "\n") : i = w;
   });
-  var m = e.find(function (s) {
+  var E = e.find(function (s) {
     return s.length === t.length;
   });
-  if (!m) throw o += "\u65B9\u6CD5 ".concat(i, " \u4E0D\u5B58\u5728 ").concat(t.length, " \u4E2A\u53C2\u6570\u7684\u91CD\u8F7D\u3002"), o += c, new Error(o);
+  if (!E) throw o += "\u65B9\u6CD5 ".concat(i, " \u4E0D\u5B58\u5728 ").concat(t.length, " \u4E2A\u53C2\u6570\u7684\u91CD\u8F7D\u3002"), o += c, new Error(o);
   var u = !1;
-  if (m.forEach(function (s, a) {
+  if (E.forEach(function (s, a) {
     if (!Y(t[a], s)) {
       var y = Array.isArray(s) ? s.map(P).join("\u3001") : P(s);
       o += "".concat(u ? "\n" : "", "\u53C2\u6570").concat(a + 1, "\uFF1A\u9884\u671F ").concat(y, " \u4F46\u5F97\u5230 ").concat(P(t[a]), "\u3002"), u = !0;
@@ -426,7 +426,7 @@ function Z(r, e, t) {
   }), u) throw o = "\u65B9\u6CD5 ".concat(i, " \u8C03\u7528\u9519\u8BEF\n").concat(o), o += c, new Error(o);
 }
 h(Z, "R");
-function W() {
+function H() {
   var r = [],
     e = [],
     t = [],
@@ -444,19 +444,19 @@ function W() {
       i[_key11] = arguments[_key11];
     }
     if (!r.length) return o.apply(this, i);
-    var m = i.length;
+    var E = i.length;
     t: for (var u = 0; u < r.length; u++) {
       var s = r[u],
         a = t[u],
         y = s.length;
-      if (!(a.length !== m && !a.rest || m === 0 && y && s[0] !== R)) {
-        for (var d = 0; d < m; d++) {
-          var A = s[d] || s[y - 1];
-          if (!Y(i[d], A)) {
+      if (!(a.length !== E && !a.rest || E === 0 && y && s[0] !== R)) {
+        for (var d = 0; d < E; d++) {
+          var N = s[d] || s[y - 1];
+          if (!Y(i[d], N)) {
             try {
-              var _A$;
-              var w = A === null || A === void 0 || (_A$ = A["\u21C4"]) === null || _A$ === void 0 ? void 0 : _A$.call(A, i[d]);
-              if (Y(w, A)) {
+              var _N$;
+              var w = N === null || N === void 0 || (_N$ = N["\u21C4"]) === null || _N$ === void 0 ? void 0 : _N$.call(N, i[d]);
+              if (Y(w, N)) {
                 i[d] = w;
                 continue;
               }
@@ -469,9 +469,9 @@ function W() {
     }
     return o.apply(this, i);
   }
-  return h(c, "f"), c.add = function (i, m) {
+  return h(c, "f"), c.add = function (i, E) {
     if (!Array.isArray(r)) throw new TypeError("types \u5FC5\u987B\u662F\u6570\u7EC4\u3002");
-    if (typeof m != "function") throw new TypeError("fn \u5FC5\u987B\u662F\u51FD\u6570\u3002");
+    if (typeof E != "function") throw new TypeError("fn \u5FC5\u987B\u662F\u51FD\u6570\u3002");
     for (var u = 0; u < i.length; u++) if (i[u] === R && u !== i.length - 1) throw new SyntaxError("".concat(R, " \u5FC5\u987B\u662F\u6700\u540E\u4E00\u4E2A\u53C2\u6570\u3002"));
     return r.forEach(function (u) {
       if (u.length === i.length) {
@@ -486,7 +486,7 @@ function W() {
         var y = _typeof(u[a]);
         if (y !== "function" && !(y === "object" && typeof ((_u$a2 = u[a]) === null || _u$a2 === void 0 ? void 0 : _u$a2.constructor) == "function") && u[a] !== null && u[a] !== C) throw new TypeError("\u7C7B\u578B\u5FC5\u987B\u4E3A Class\u3001null \u6216 ".concat(C, "\u3002"));
       }
-    }), r.push(i), e.push(m), t.push({
+    }), r.push(i), e.push(E), t.push({
       length: i.length,
       rest: i[i.length - 1] === R
     }), c;
@@ -496,11 +496,11 @@ function W() {
     return n = i, c;
   }, c;
 }
-h(W, "N");
-var p = W().add([], function () {
-    return W();
+h(H, "N");
+var p = H().add([], function () {
+    return H();
   }).add([Array, Function], function (r, e) {
-    var t = W();
+    var t = H();
     return t.add(r, e), t;
   }),
   F = (_t = /*#__PURE__*/new WeakMap(), _e = /*#__PURE__*/new WeakMap(), _o = /*#__PURE__*/new WeakMap(), _f_brand = /*#__PURE__*/new WeakSet(), _f = /*#__PURE__*/function () {
@@ -860,7 +860,7 @@ var p = W().add([], function () {
         return f.T = p([Function], function (n) {
           var o = t.get(n);
           return !o && t.set(n, o = new Proxy(f, {
-            get: h(function (c, i, m) {
+            get: h(function (c, i, E) {
               return i === "##INNER_TYPE##" ? n : c[i];
             }, "get")
           })), o;
@@ -925,7 +925,7 @@ function _r6(e) {
   if (e < 0) throw new Error("\u7D22\u5F15 ".concat(e, " \u8D85\u51FA\u8303\u56F4\uFF0C\u7D22\u5F15\u5FC5\u987B\u5927\u4E8E\u6216\u7B49\u4E8E 0\u3002"));
   if (e >= _classPrivateFieldGet(_t, this).length) throw new Error("\u7D22\u5F15 ".concat(e, " \u8D85\u51FA\u8303\u56F4\uFF0C\u5217\u8868\u957F\u5EA6\u4E3A ").concat(_classPrivateFieldGet(_t, this).length, "\u3002"));
 }
-var x = (_t3 = /*#__PURE__*/new WeakMap(), _r7 = /*#__PURE__*/function (_N2) {
+var x = (_t3 = /*#__PURE__*/new WeakMap(), _r7 = /*#__PURE__*/function (_A2) {
   function r() {
     var _this6;
     _classCallCheck(this, r);
@@ -935,7 +935,7 @@ var x = (_t3 = /*#__PURE__*/new WeakMap(), _r7 = /*#__PURE__*/function (_N2) {
     _this6 = _callSuper(this, r), _classPrivateFieldInitSpec(_assertThisInitialized(_this6), _t3, ""), _assertThisInitialized(_this6), r[l].apply(_assertThisInitialized(_this6), e), _this6.message = _this6.processMsg();
     return _this6;
   }
-  _inherits(r, _N2);
+  _inherits(r, _A2);
   return _createClass(r, [{
     key: "paramName",
     get: function get() {
@@ -951,20 +951,20 @@ var x = (_t3 = /*#__PURE__*/new WeakMap(), _r7 = /*#__PURE__*/function (_N2) {
       } else return e;
     }
   }]);
-}(N), h(_r7, "ArgumentException"), _defineProperty(_r7, l, function () {
+}(A), h(_r7, "ArgumentException"), _defineProperty(_r7, l, function () {
   for (var _len17 = arguments.length, e = new Array(_len17), _key17 = 0; _key17 < _len17; _key17++) {
     e[_key17] = arguments[_key17];
   }
-  return _r7[l] = E().add([], function () {
+  return _r7[l] = m().add([], function () {
     this.message = S("Arg_ArgumentException");
   }).add([String], function (t) {
-    N[l].call(this, t);
+    A[l].call(this, t);
   }).add([String, [Error, g, null]], function (t, n) {
-    N[l].call(this, t, n);
+    A[l].call(this, t, n);
   }).add([String, String, [Error, g, null]], function (t, n, o) {
-    N[l].call(this, t, o), _classPrivateFieldSet(_t3, this, n);
+    A[l].call(this, t, o), _classPrivateFieldSet(_t3, this, n);
   }).add([String, String], function (t, n) {
-    N[l].call(this, t), _classPrivateFieldSet(_t3, this, n);
+    A[l].call(this, t), _classPrivateFieldSet(_t3, this, n);
   }), _r7[l].apply(this, e);
 }), _r7);
 var $ = (_r8 = /*#__PURE__*/function (_x) {
@@ -983,7 +983,7 @@ var $ = (_r8 = /*#__PURE__*/function (_x) {
   for (var _len19 = arguments.length, e = new Array(_len19), _key19 = 0; _key19 < _len19; _key19++) {
     e[_key19] = arguments[_key19];
   }
-  return _r8[l] = E().add([], function () {
+  return _r8[l] = m().add([], function () {
     this.message = S("ArgumentNull_Generic");
   }).add([String], function (t) {
     x[l].call(this, S("ArgumentNull_Generic"), t);
@@ -1021,12 +1021,12 @@ var j = (_t4 = /*#__PURE__*/new WeakMap(), _r9 = /*#__PURE__*/function (_g2) {
       for (var _len21 = arguments.length, e = new Array(_len21), _key21 = 0; _key21 < _len21; _key21++) {
         e[_key21] = arguments[_key21];
       }
-      return r.prototype.getBaseException = E([], function () {
+      return r.prototype.getBaseException = m([], function () {
         var t = this,
           n = this;
         for (; n && ((_n$cause = n.cause) === null || _n$cause === void 0 ? void 0 : _n$cause.length) === 1;) {
           var _n$cause;
-          t = t.cause[0], n = V(t, r);
+          t = t.cause[0], n = W(t, r);
         }
         return t;
       }), r.prototype.getBaseException.apply(this, e);
@@ -1037,7 +1037,7 @@ var j = (_t4 = /*#__PURE__*/new WeakMap(), _r9 = /*#__PURE__*/function (_g2) {
       for (var _len22 = arguments.length, e = new Array(_len22), _key22 = 0; _key22 < _len22; _key22++) {
         e[_key22] = arguments[_key22];
       }
-      return r.prototype.handle = E([Function], function (t) {
+      return r.prototype.handle = m([Function], function (t) {
         var n = null;
         for (var o = 0; o < ((_this$cause = this.cause) === null || _this$cause === void 0 ? void 0 : _this$cause.length); o++) {
           var _this$cause;
@@ -1052,7 +1052,7 @@ var j = (_t4 = /*#__PURE__*/new WeakMap(), _r9 = /*#__PURE__*/function (_g2) {
       for (var _len23 = arguments.length, e = new Array(_len23), _key23 = 0; _key23 < _len23; _key23++) {
         e[_key23] = arguments[_key23];
       }
-      return r.prototype.flatten = E([], function () {
+      return r.prototype.flatten = m([], function () {
         var t = new F(g),
           n = new F(r);
         n.add(this);
@@ -1060,10 +1060,10 @@ var j = (_t4 = /*#__PURE__*/new WeakMap(), _r9 = /*#__PURE__*/function (_g2) {
         for (; (n === null || n === void 0 ? void 0 : n.length) > o;) {
           var c = n[o++].cause;
           for (var i = 0; i < (c === null || c === void 0 ? void 0 : c.length); i++) {
-            var m = c[i];
-            if (!m) continue;
-            var u = V(m, r);
-            u ? n.add(u) : t.add(m);
+            var E = c[i];
+            if (!E) continue;
+            var u = W(E, r);
+            u ? n.add(u) : t.add(E);
           }
         }
         return new r(this.message, t);
@@ -1076,7 +1076,7 @@ var j = (_t4 = /*#__PURE__*/new WeakMap(), _r9 = /*#__PURE__*/function (_g2) {
       for (var _len24 = arguments.length, e = new Array(_len24), _key24 = 0; _key24 < _len24; _key24++) {
         e[_key24] = arguments[_key24];
       }
-      return r.prototype.toString = E([], function () {
+      return r.prototype.toString = m([], function () {
         var n = t.call(this);
         for (var o = 0; o < ((_classPrivateFieldGet5 = _classPrivateFieldGet(_t4, this)) === null || _classPrivateFieldGet5 === void 0 ? void 0 : _classPrivateFieldGet5.length); o++) {
           var _classPrivateFieldGet5;
@@ -1090,7 +1090,7 @@ var j = (_t4 = /*#__PURE__*/new WeakMap(), _r9 = /*#__PURE__*/function (_g2) {
   for (var _len25 = arguments.length, e = new Array(_len25), _key25 = 0; _key25 < _len25; _key25++) {
     e[_key25] = arguments[_key25];
   }
-  return _r9[l] = E().add([], function () {
+  return _r9[l] = m().add([], function () {
     this.message = S("AggregateException_ctor_DefaultMessage"), _classPrivateFieldSet(_t4, this, new F(g).asReadOnly()), this.cause = _classPrivateFieldGet(_t4, this)[0] || null;
   }).add([String], function (t) {
     g[l].call(this, t), _classPrivateFieldSet(_t4, this, new F(g).asReadOnly()), this.cause = _classPrivateFieldGet(_t4, this)[0] || null;
@@ -1106,4 +1106,4 @@ var j = (_t4 = /*#__PURE__*/new WeakMap(), _r9 = /*#__PURE__*/function (_g2) {
     _classPrivateFieldSet(_t4, this, o.asReadOnly()), this.cause = _classPrivateFieldGet(_t4, this)[0] || null;
   }), _r9[l].apply(this, e);
 }), _r9);
-export { k as AccessViolationException, j as AggregateException, x as ArgumentException, $ as ArgumentNullException, g as Exception, N as SystemException };
+export { k as AccessViolationException, j as AggregateException, x as ArgumentException, $ as ArgumentNullException, g as Exception, A as SystemException };

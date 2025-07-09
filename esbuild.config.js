@@ -1,7 +1,7 @@
 import * as esbuild from "esbuild";
 import { exec } from "child_process";
 
-["zh-CN", "en-US"].forEach(async lang => {
+["zh-CN", "en-US", "ja-JP"].forEach(async lang => {
     const entryPoints = ["./src/index.js"];
 
     const options = {
@@ -24,5 +24,5 @@ import { exec } from "child_process";
     const text = await esbuild.analyzeMetafile(result.metafile, { verbose: true });
     console.log(text);
 
-    exec(`babel --out-file ./dist/index.${lang}.js ./dist/index.${lang}.js`)
+    exec(`babel --out-file ./dist/index.${lang}.js ./dist/index.${lang}.js`);
 });

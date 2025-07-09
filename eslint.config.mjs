@@ -39,7 +39,8 @@ export default [
             "no-loss-of-precision": "error",
             "no-irregular-whitespace": "warn",
             "no-const-assign": "error",
-            "no-class-assign": "error"
+            "no-class-assign": "error",
+            "new-cap": "off"
         }
     },
     pluginPrettier
